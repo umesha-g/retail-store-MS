@@ -2,17 +2,15 @@ package com.umeshag.retailstorerm;
 
 import javax.swing.*;
 
-import com.formdev.flatlaf.FlatLightLaf;
-
-public class Main {
+public class main {
     public static void main(String[] args) {
         DataBaseInitializer.initialize();
-        try{
-            javax.swing.UIManager.setLookAndFeel(new FlatLightLaf());
-        }
-        catch(UnsupportedLookAndFeelException e){
-            e.printStackTrace();
-        }
+        // try{
+        //     javax.swing.UIManager.setLookAndFeel(new FlatLightLaf());
+        // }
+        // catch(UnsupportedLookAndFeelException e){
+        //     e.printStackTrace();
+        // }
         SwingUtilities.invokeLater(() -> {
              openLogin();
         });

@@ -741,7 +741,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
             ex.printStackTrace();
         }
 
-        Main.openLogin(); 
+        main.openLogin(); 
         dispose();
     }
 
