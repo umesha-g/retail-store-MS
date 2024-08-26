@@ -1,6 +1,8 @@
-import java.util.Random;
+package com.umeshag.retailstorerm;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class BillNumberGenerator {
     //method for concatenate bill number ---------------------------------------

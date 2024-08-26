@@ -1,4 +1,8 @@
+package com.umeshag.retailstorerm;
+
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
@@ -18,7 +22,7 @@ public class DataBaseInitializer {
     private static  String ROOT_PASS = "root";
     private static final String APP_USER = "user";
     private static final String APP_PASS = "pass";
-    private static final String FILE_PATH = "/src/credentials.txt";
+    private static final String FILE_PATH = "/src/main/resources/credentials.txt";
     
 
     public static void initialize() {

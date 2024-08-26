@@ -1,7 +1,12 @@
+package com.umeshag.retailstorerm;
+
+
 import java.awt.*;
+
 import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
-import com.formdev.flatlaf.*;
+
+import com.formdev.flatlaf.FlatLightLaf;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +14,7 @@ public class Main {
         try{
             javax.swing.UIManager.setLookAndFeel(new FlatLightLaf());
         }
-        catch(Exception e){
+        catch(UnsupportedLookAndFeelException e){
             e.printStackTrace();
         }
         SwingUtilities.invokeLater(() -> {

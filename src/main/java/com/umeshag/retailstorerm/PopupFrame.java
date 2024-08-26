@@ -1,15 +1,15 @@
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+package com.umeshag.retailstorerm;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.text.*;
-import java.io.IOException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.io.Serializable;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class PopupFrame extends JFrame implements Serializable {
     private static final long serialVersionUID = 4;

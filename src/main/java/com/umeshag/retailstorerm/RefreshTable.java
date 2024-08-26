@@ -1,6 +1,12 @@
-import javax.swing.*;
+package com.umeshag.retailstorerm;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javax.swing.table.DefaultTableModel;
-import java.sql.*;
 
 public class RefreshTable{
 
