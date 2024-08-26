@@ -1,30 +1,33 @@
 package com.umeshag.retailstorerm;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
-import java.awt.GraphicsEnvironment;
-
-import javax.swing.*;
-import javax.swing.text.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
-import javax.swing.table.DefaultTableCellRenderer;
-
-import java.sql.*;
-
+import java.awt.event.MouseAdapter;
+import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import java.io.IOException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.Serializable;
+import javax.swing.JButton;
+import javax.swing.JEditorPane;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 public class CashierWindow extends javax.swing.JFrame implements Serializable {
     private static final long serialVersionUID = 3;
@@ -135,6 +138,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         // create bill tabel model
         String[] columnNames = {"##", "Code", "Name", "Unit Price", "Quantity", "Amount"};
         billTableModel = new DefaultTableModel(columnNames, 0){
+            @Override
             public boolean isCellEditable(int row, int column) {
                 return false; // Make all rows non-editable
             }
@@ -184,6 +188,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         newOrderBtn.setText("Start New Order");
         newOrderBtn.setPreferredSize(new java.awt.Dimension(200, 34));
         newOrderBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 billNum = newOrderBtnMouseClicked(evt,username);
             }
@@ -196,6 +201,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         logOutBtn.setMaximumSize(new java.awt.Dimension(80, 27));
         logOutBtn.setPreferredSize(new java.awt.Dimension(100, 34));
         logOutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logOutBtnMouseClicked(evt);
             }
@@ -222,11 +228,13 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         itemSearchTxt.setPreferredSize(new java.awt.Dimension(160, 30));
         itemSearchTxt.setText("for Items");
         itemSearchTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 itemSearchTxtMouseClicked(evt);
             }
         });
         itemSearchTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 itemSearchTxtKeyPressed(evt,itemsTableModel);
             }
@@ -239,6 +247,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         itemResetBtn.setText("Reset");
         itemResetBtn.setPreferredSize(new java.awt.Dimension(70, 34));
         itemResetBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 itemResetBtnMouseClicked(evt,itemsTableModel);
             }
@@ -258,6 +267,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         printBtn.setText("Print the Bill");
         printBtn.setPreferredSize(new java.awt.Dimension(200, 34));
         printBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 printBtnMouseClicked(evt);
             }
@@ -292,6 +302,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         cusSearchTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         cusSearchTxt.setPreferredSize(new java.awt.Dimension(140, 30));
         cusSearchTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cusSearchTxtMouseClicked(evt);
             }
@@ -305,6 +316,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         cusSearchBtn.setToolTipText("");
         cusSearchBtn.setPreferredSize(new java.awt.Dimension(70, 34));
         cusSearchBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                  cusSearchBtnMouseClicked(evt);
             }
@@ -357,6 +369,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         cashBtn.setMaximumSize(new java.awt.Dimension(100, 27));
         cashBtn.setPreferredSize(new java.awt.Dimension(100, 34));
         cashBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 payMethod=cashBtnMouseClicked(evt);
             }
@@ -371,6 +384,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         cardBtn.setMaximumSize(new java.awt.Dimension(100, 27));
         cardBtn.setPreferredSize(new java.awt.Dimension(100, 34));
         cardBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 payMethod=cardBtnMouseClicked(evt);
             }
@@ -385,6 +399,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         voucherBtn.setMaximumSize(new java.awt.Dimension(100, 27));
         voucherBtn.setPreferredSize(new java.awt.Dimension(100, 34));
         voucherBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 payMethod=voucherBtnMouseClicked(evt);
             }
@@ -399,6 +414,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         paidBtn.setMaximumSize(new java.awt.Dimension(100, 27));
         paidBtn.setPreferredSize(new java.awt.Dimension(250, 34));
         paidBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                paidBtnMouseClicked(evt);
             }
@@ -425,6 +441,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
 
         //table model for item display table
         itemsTableModel = new DefaultTableModel(new Object[]{"Code","Name","Quantity","Unit Price"},0 ){
+            @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
@@ -468,6 +485,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         addToBillBtn.setMaximumSize(new java.awt.Dimension(100, 27));
         addToBillBtn.setPreferredSize(new java.awt.Dimension(150, 34));
         addToBillBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addToBillBtnMouseClicked(evt,itemsDispTable,billTable,billTableModel,itemsTableModel);
             }
@@ -612,7 +630,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
                             String qntity = resultSet.getString("stock_qntity");
                             String price = resultSet.getString("stock_price");
                             int intQuan = Integer.parseInt(qntity);
-                            double intPrice = Double.valueOf(price);
+                            double intPrice = Double.parseDouble(price);
                             tableModel.addRow(new Object[]{id, name, intQuan,intPrice});
                          }
                     }
@@ -628,7 +646,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
     // payment calculation and invoice botom update method ---------------------
     public void paymentCal(double number){
         num = number;
-        if(payMethod == "Card"){
+        if("Card".equals(payMethod)){
             int digits = (int)number;
             htmlBottomContent = "<html><head></head><body  style='font-family:Liberation Mono; text-align:left;'>"
                     +"<p>-------------------------------------------------------------------------<p>"
@@ -638,7 +656,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
                     + "<h4 style='font-family:Liberation Mono;color: black;font-weight: 100;margin-top:-10px;'>Paid : "+totalBillAmount+"</h4>"
                     + "<h4 style='font-family:Liberation Mono;color: black;font-weight: 100;margin-top:-10px;'>Last 4 Digits of Card : "+digits+"</h4>";
         }
-        else if(payMethod == "Voucher"){
+        else if("Voucher".equals(payMethod)){
             balance = number - totalBillAmount;
             htmlBottomContent = "<html><head></head><body  style='font-family:Liberation Mono; text-align:left;'>"
                     +"<p>-------------------------------------------------------------------------<p>"
@@ -782,7 +800,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
-            if(id=="-"){
+            if("-".equals(id)){
                 cusInfoLbl.setText("");
                 cusInfoLbl.setText("Customer Not Found");
                 cusBillPrint[0] = "-" ;
@@ -832,7 +850,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
             String cusId = (String)cusBillPrint[2];
            
 
-            if(cusId=="-"){}
+            if("-".equals(cusId)){}
             else{
                 try {
                     Connection connection = DriverManager.getConnection(sqlUrl, sqlUsername, sqlPassword); {
@@ -852,7 +870,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
             PopupFrame popupDlgFrame = new PopupFrame(this,payMethod);
             popupDlgFrame.setVisible(true);
 
-            if(cusId=="-"){}
+            if("-".equals(cusId)){}
             else{
                 cusBillPrint[1] = newLoyal ;
             }
@@ -877,7 +895,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
         String payMeth =payMethod;
         double paidA =0.0;
 
-        if (payMeth =="Cash") {
+        if ("Cash".equals(payMeth)) {
             paidA = num;
         }
         else{
@@ -1137,7 +1155,7 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
                                 String price= resultSet.getString("stock_price");
 
                                 int intQuan = Integer.parseInt(qntity);
-                                double intPrice = Double.valueOf(price);
+                                double intPrice = Double.parseDouble(price);
                                 tableModel.addRow(new Object[]{id, name, intQuan,intPrice});
                             }
                         }  

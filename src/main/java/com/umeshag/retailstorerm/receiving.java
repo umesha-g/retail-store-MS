@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
-public class LoginWindow extends JFrame implements Serializable {
+public class receiving extends JFrame implements Serializable {
     private static final long serialVersionUID = 1;
 
 //================================== OBJECTS ===================================
@@ -40,7 +40,7 @@ public class LoginWindow extends JFrame implements Serializable {
     String sqlPassword = "maths";
 
 //============================= CONSTRUCTOR ====================================
-    public LoginWindow() {
+    public receiving() {
     components();
     setTitle("Login Window");
     }
@@ -98,6 +98,7 @@ public class LoginWindow extends JFrame implements Serializable {
         loginBtn.setPreferredSize(new java.awt.Dimension(65, 20));
         loginBtn.setBounds(90, 270, 100, 30);
         loginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginBtnMouseClicked();
             }
@@ -136,6 +137,7 @@ public class LoginWindow extends JFrame implements Serializable {
         passwTxt.setBounds(120, 205, 180, 30);
         passwTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0,102,102)));
         passwTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 passwTxtMouseClicked(evt);
             }
@@ -160,6 +162,7 @@ public class LoginWindow extends JFrame implements Serializable {
         closeBtn.setPreferredSize(new java.awt.Dimension(65, 20));
         closeBtn.setBounds(200, 270, 100, 30);
         closeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeButtonMouseClicked(evt);
             }
@@ -180,9 +183,9 @@ public class LoginWindow extends JFrame implements Serializable {
     private void loginBtnMouseClicked() {
         String username = (String) userCmBx.getSelectedItem();
         String password = new String(passwTxt.getPassword());
-        String[] result;
+        String[] result ;
         result = isValidLogin(username, password);
-        if (result[0]=="true") {
+        if ("true".equals(result[0])) {
             if (loginListener != null) {
                 loginListener.onLoginSuccess(result[1],result[2],result[3]);
              }

@@ -1,10 +1,6 @@
 package com.umeshag.retailstorerm;
 
-
-import java.awt.*;
-
 import javax.swing.*;
-import javax.swing.plaf.ColorUIResource;
 
 import com.formdev.flatlaf.FlatLightLaf;
 
@@ -36,7 +32,7 @@ public class Main {
     
     //method for create new login instance and inject selecting method ---------
     public static void openLogin() {
-        LoginWindow loginFrame = new LoginWindow();
+        receiving loginFrame = new receiving();
         loginFrame.setVisible(true);
         loginFrame.addLoginListener(new LoginListener() {
             @Override // new loginlistener with new selection method
