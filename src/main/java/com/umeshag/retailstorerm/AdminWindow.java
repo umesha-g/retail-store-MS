@@ -122,8 +122,8 @@ public class AdminWindow extends javax.swing.JFrame implements Serializable {
     RefreshTable refreshTable = new RefreshTable();
     
     String sqlUrl = "jdbc:mysql://localhost:3306/retail_store_database";
-    String sqlUsername = "maths";
-    String sqlPassword = "maths";
+    String sqlUsername = "user";
+    String sqlPassword = "pass";
     boolean stockIntResetHasRun = false;
 
 //============================= CONSTRUCTOR ====================================

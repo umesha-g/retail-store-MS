@@ -27,8 +27,8 @@ public class ResetPassWindow extends JFrame implements Serializable {
     int stockReset = 0;
 
     String sqlUrl = "jdbc:mysql://localhost:3306/retail_store_database";
-    String sqlUsername = "maths";
-    String sqlPassword = "maths";
+    String sqlUsername = "user";
+    String sqlPassword = "pass";
 
 //============================= CONSTRUCTOR ====================================
     public ResetPassWindow(AdminWindow admin,String id){

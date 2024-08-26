@@ -40,8 +40,8 @@ public class CusReportWindow extends JFrame implements Serializable {
     JPanel topLeftPanel = new JPanel();
 
     String sqlUrl = "jdbc:mysql://localhost:3306/retail_store_database";
-    String sqlUsername = "maths";
-    String sqlPassword = "maths";
+    String sqlUsername = "user";
+    String sqlPassword = "pass";
 
 // ========================= CONSTRUCTOR =======================================
     public CusReportWindow() {

@@ -11,8 +11,8 @@ import javax.swing.table.DefaultTableModel;
 public class RefreshTable{
 
     String sqlUrl = "jdbc:mysql://localhost:3306/retail_store_database";
-    String sqlUsername = "maths";
-    String sqlPassword = "maths";
+    String sqlUsername = "user";
+    String sqlPassword = "pass";
 
     // table Reseting method -----------------------------------------------------------------------------------------------------------------------------------------------
     public void refreshTable( String category,DefaultTableModel tableModel) {

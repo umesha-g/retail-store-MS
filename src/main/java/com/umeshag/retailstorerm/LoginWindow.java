@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
-public class receiving extends JFrame implements Serializable {
+public class LoginWindow extends JFrame implements Serializable {
     private static final long serialVersionUID = 1;
 
 //================================== OBJECTS ===================================
@@ -36,11 +36,11 @@ public class receiving extends JFrame implements Serializable {
     boolean passwTxtHasRun = false;
 
     String sqlUrl = "jdbc:mysql://localhost:3306/retail_store_database";
-    String sqlUsername = "maths";
-    String sqlPassword = "maths";
+    String sqlUsername = "user";
+    String sqlPassword = "pass";
 
 //============================= CONSTRUCTOR ====================================
-    public receiving() {
+    public LoginWindow() {
     components();
     setTitle("Login Window");
     }

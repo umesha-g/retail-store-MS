@@ -2,15 +2,17 @@ package com.umeshag.retailstorerm;
 
 import javax.swing.*;
 
+import com.formdev.flatlaf.FlatLightLaf;
+
 public class main {
-    public static void main(String[] args) {
+    public static void main (String[] args) {
         DataBaseInitializer.initialize();
-        // try{
-        //     javax.swing.UIManager.setLookAndFeel(new FlatLightLaf());
-        // }
-        // catch(UnsupportedLookAndFeelException e){
-        //     e.printStackTrace();
-        // }
+         try{
+             javax.swing.UIManager.setLookAndFeel(new FlatLightLaf());
+         }
+         catch(UnsupportedLookAndFeelException e){
+             e.printStackTrace();
+         }
         SwingUtilities.invokeLater(() -> {
              openLogin();
         });
@@ -30,7 +32,7 @@ public class main {
     
     //method for create new login instance and inject selecting method ---------
     public static void openLogin() {
-        receiving loginFrame = new receiving();
+        LoginWindow loginFrame = new LoginWindow();
         loginFrame.setVisible(true);
         loginFrame.addLoginListener(new LoginListener() {
             @Override // new loginlistener with new selection method

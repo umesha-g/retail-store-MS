@@ -2,8 +2,10 @@ package com.umeshag.retailstorerm;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -12,27 +14,29 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
+
 public class DataBaseInitializer {
+    
     private static final String DB_URL = "jdbc:mysql://localhost:3306/";
     private static final String DB_NAME = "retail_store_database";
     private static  String ROOT_USER = "root";
     private static  String ROOT_PASS = "root";
     private static final String APP_USER = "user";
     private static final String APP_PASS = "pass";
-    private static final String FILE_PATH = "/src/main/resources/credentials.txt";
+    private static final String FILE_PATH = "credentials.txt";
     
 
     public static void initialize() {
         
-        try (Connection rootConn = DriverManager.getConnection(DB_URL, ROOT_USER, ROOT_PASS)) {
-            String[] credentials = CredentialReader(FILE_PATH);
 
-            ROOT_USER = credentials[0];
-            ROOT_PASS = credentials[1];
+        String[] credentials = CredentialReader();
+        ROOT_USER = credentials[0];
+        ROOT_PASS = credentials[1];
 
+        try ( Connection rootConn = DriverManager.getConnection(DB_URL, ROOT_USER, ROOT_PASS)) {
+            
             if (!databaseExists(rootConn)) {
                 createDatabaseAndUser(rootConn);
                 System.out.println("Database and user created.");
@@ -87,7 +91,7 @@ public class DataBaseInitializer {
     @SuppressWarnings("resource")
     private static void executeSqlScript(Connection conn) throws SQLException {
         String script = new BufferedReader(
-            new InputStreamReader(DataBaseInitializer.class.getResourceAsStream("/src/main/resources/DataBaseInitializer.sql"), StandardCharsets.UTF_8))
+            new InputStreamReader(DataBaseInitializer.class.getResourceAsStream("/DataBaseInitializer.sql"), StandardCharsets.UTF_8))
                 .lines()
                 .collect(Collectors.joining("\n"));
         
@@ -120,22 +124,33 @@ public class DataBaseInitializer {
         }
     }
 
-    private static String[] CredentialReader(String filePath) {
+    private static String[] CredentialReader() {
 
         String username = null;
         String password = null;
         String[] result = new String[2];
 
-        try (Scanner scanner = new Scanner(new File(filePath))) {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
+        File jarDir = null;
+
+        try {
+            jarDir = new File(DataBaseInitializer.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+
+        // Construct the path to the text file
+        File file = new File(jarDir, "credentials.txt");
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
                 if (line.startsWith("username:")) {
                     username = line.substring("username:".length()).trim();
                 } else if (line.startsWith("password:")) {
                     password = line.substring("password:".length()).trim();
                 }
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

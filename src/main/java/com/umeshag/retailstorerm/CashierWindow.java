@@ -112,8 +112,8 @@ public class CashierWindow extends javax.swing.JFrame implements Serializable {
     String loginDate = dateFormat.format(new Date());
     
     String sqlUrl = "jdbc:mysql://localhost:3306/retail_store_database";
-    String sqlUsername = "maths";
-    String sqlPassword = "maths";
+    String sqlUsername = "user";
+    String sqlPassword = "pass";
 
 //================================ CONSTRUCTOR =================================
 

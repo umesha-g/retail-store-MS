@@ -31,8 +31,8 @@ public class EmployeeReportWindow extends JFrame implements Serializable {
     private static final long serialVersionUID = 8;
 
     String sqlUrl = "jdbc:mysql://localhost:3306/retail_store_database";
-    String sqlUsername = "maths";
-    String sqlPassword = "maths";
+    String sqlUsername = "user";
+    String sqlPassword = "pass";
 
 // ========================= CONSTRUCTOR =======================================
     public EmployeeReportWindow() {
