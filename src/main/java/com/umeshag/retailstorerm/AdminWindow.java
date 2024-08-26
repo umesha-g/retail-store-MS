@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -33,6 +34,8 @@ public class AdminWindow extends javax.swing.JFrame implements Serializable {
     private DefaultTableModel empTableModel;
     private DefaultTableModel stockTableModel;
     private DefaultTableModel traTableModel;
+
+    String[] dropJobs = {"Cashier", "Admin"};
 
     JTabbedPane tabedPnls = new JTabbedPane();
     JPanel stockPnl = new JPanel();
@@ -95,7 +98,7 @@ public class AdminWindow extends javax.swing.JFrame implements Serializable {
     JLabel empNameLbl = new JLabel();
     JTextField empNameTxt = new JTextField();
     JLabel empJobLbl = new JLabel();
-    JTextField empJobTxt = new JTextField();
+    JComboBox<String> empJobCmBx = new JComboBox<>(dropJobs);
     JLabel empPwlbl = new JLabel();
     JTextField empPwTxt = new JTextField();
     JButton empAddBtn = new JButton();
@@ -743,13 +746,15 @@ public class AdminWindow extends javax.swing.JFrame implements Serializable {
         empJobLbl.setPreferredSize(new java.awt.Dimension(120, 21));
         empAddPnl.add(empJobLbl);
 
-        //emp job text properties
-        empJobTxt.setBackground(new java.awt.Color(0, 51, 51));
-        empJobTxt.setForeground(new java.awt.Color(255, 255, 255));
-        empJobTxt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        empJobTxt.setMinimumSize(new java.awt.Dimension(164, 27));
-        empJobTxt.setPreferredSize(new java.awt.Dimension(200, 30));
-        empAddPnl.add(empJobTxt);
+        //emp job combo box properties
+        empJobCmBx.setOpaque(true);
+        empJobCmBx.setBounds(120, 165, 180, 30);
+        empJobCmBx.setBackground(new java.awt.Color(0, 51, 51));
+        empJobCmBx.setForeground(new java.awt.Color(255, 255, 255));
+        empJobCmBx.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        empJobCmBx.setMinimumSize(new java.awt.Dimension(164, 27));
+        empJobCmBx.setPreferredSize(new java.awt.Dimension(200, 30));
+        empAddPnl.add(empJobCmBx);
 
         // emp password label
         empPwlbl.setForeground(new java.awt.Color(255, 255, 255));
@@ -1156,7 +1161,7 @@ public class AdminWindow extends javax.swing.JFrame implements Serializable {
     private void empAddBtnMouseClicked(java.awt.event.MouseEvent evt) { 
         String id = empIdTxt.getText();
         String name = empNameTxt.getText();
-        String job = empJobTxt.getText();
+        String job =(String) empJobCmBx.getSelectedItem();
         String passw = empPwTxt.getText();
         String category = "employees";
         String result = "";
@@ -1202,7 +1207,7 @@ public class AdminWindow extends javax.swing.JFrame implements Serializable {
             refreshTable.refreshTable(category,empTableModel);
             empIdTxt.setText("");
             empNameTxt.setText("");
-            empJobTxt.setText("");
+            empJobCmBx.setSelectedItem("");
             empPwTxt.setText("");
         }
     }
@@ -1213,7 +1218,7 @@ public class AdminWindow extends javax.swing.JFrame implements Serializable {
         empSearchTxt.setText("");
         empIdTxt.setText("");
         empNameTxt.setText("");
-        empJobTxt.setText("");
+        empJobCmBx.setSelectedItem("");
         empPwTxt.setText("");
     }
 
@@ -1440,7 +1445,7 @@ public class AdminWindow extends javax.swing.JFrame implements Serializable {
         int selectedRow = empDetailsTable.getSelectedRow();
         empIdTxt.setText(empDetailsTable.getValueAt(selectedRow, 0).toString());
         empNameTxt.setText(empDetailsTable.getValueAt(selectedRow, 1).toString());
-        empJobTxt.setText(empDetailsTable.getValueAt(selectedRow, 2).toString());
+        empJobCmBx.setSelectedItem(empDetailsTable.getValueAt(selectedRow, 2).toString());
         empPwTxt.setText(empDetailsTable.getValueAt(selectedRow, 3).toString());
     }
 

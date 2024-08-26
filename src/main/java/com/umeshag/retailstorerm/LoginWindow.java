@@ -1,3 +1,5 @@
+
+
 package com.umeshag.retailstorerm;
 
 import java.awt.event.KeyEvent;
@@ -181,20 +183,30 @@ public class LoginWindow extends JFrame implements Serializable {
 
     // method for start login validation process--------------------------------
     private void loginBtnMouseClicked() {
-        String username = (String) userCmBx.getSelectedItem();
-        String password = new String(passwTxt.getPassword());
-        String[] result ;
-        result = isValidLogin(username, password);
-        if ("true".equals(result[0])) {
-            if (loginListener != null) {
-                loginListener.onLoginSuccess(result[1],result[2],result[3]);
-             }
-        } 
-        else {
+       
+        String password = new String(passwTxt.getPassword()); 
+        
+        if ( !(password.trim().isEmpty()) ) {
+            password = new String(passwTxt.getPassword());
+            String username = (String) userCmBx.getSelectedItem();
+            String[] result ;
+            result = isValidLogin(username, password);
+            if (result[0].equals("true")) {
+                if (loginListener != null) {
+                    loginListener.onLoginSuccess(result[1],result[2],result[3]);
+                }
+            } 
+            else {
+                passwTxt.setEchoChar((char) 0);
+                passwTxt.setText("Invalid login credentials");
+                passwTxt.setForeground(new java.awt.Color(204,0, 0));
+                passwTxtHasRun = false;
+            }
+        }
+        else { 
             passwTxt.setEchoChar((char) 0);
-            passwTxt.setText("Invalid login credentials");
             passwTxt.setForeground(new java.awt.Color(204,0, 0));
-            passwTxtHasRun = false;
+            passwTxt.setText("Invalid login credentials");
         }
     }
 
