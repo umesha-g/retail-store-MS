@@ -9,10 +9,6 @@
         <id>github</id>
         <url>https://maven.pkg.github.com/umesha-g/retail-store-MS</url>
     </repository>
-    <snapshotRepository>
-        <id>github</id>
-        <url>https://maven.pkg.github.com/umesha-g/retail-store-MS</url>
-    </snapshotRepository>
 </distributionManagement>
 
   <properties>
