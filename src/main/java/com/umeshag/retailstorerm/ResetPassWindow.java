@@ -1,3 +1,10 @@
+/*
+ * This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/.
+ */
+
+// @author Umesha Madushan
+
 package com.umeshag.retailstorerm;
 
 import java.awt.event.KeyEvent;
@@ -104,8 +111,7 @@ public class ResetPassWindow extends JFrame implements Serializable {
         if (pass.equals(stockResetPopupTxt.getText())) {
             int result = JOptionPane.showConfirmDialog(this, "Do You Want To Proceed ?","Confirmation",JOptionPane.YES_NO_OPTION);
             if(result == JOptionPane.YES_OPTION){
-                System.out.println("Done");
-                /*try{
+                try{
                     Connection connection = DriverManager.getConnection(sqlUrl, sqlUsername, sqlPassword); {
                         String query = "INSERT INTO initial_stocks SELECT * FROM  stocks";
                         try (PreparedStatement statement = connection.prepareStatement(query)) {
@@ -115,7 +121,7 @@ public class ResetPassWindow extends JFrame implements Serializable {
                     connection.close(); 
                 } catch (SQLException ex) {
                     ex.printStackTrace();
-                }*/
+                }
                 JOptionPane.showMessageDialog(this,"Initial Stocks Reseted"); 
             }
             else{

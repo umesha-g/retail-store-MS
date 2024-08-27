@@ -1,3 +1,10 @@
+/*
+ * This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/.
+ */
+
+// @author Umesha Madushan
+
 package com.umeshag.retailstorerm;
 
 import java.io.BufferedReader;
@@ -16,22 +23,24 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.stream.Collectors;
 
+import javax.swing.JOptionPane;
+
 
 public class DataBaseInitializer {
     
     private static final String DB_URL = "jdbc:mysql://localhost:3306/";
     private static final String DB_NAME = "retail_store_database";
-    private static  String ROOT_USER = "root";
-    private static  String ROOT_PASS = "root";
+    private static  String ROOT_USER = "user";
+    private static  String ROOT_PASS = "pass";
     private static final String APP_USER = "user";
     private static final String APP_PASS = "pass";
-    private static final String FILE_PATH = "credentials.txt";
     
 
     public static void initialize() {
         
 
         String[] credentials = CredentialReader();
+
         ROOT_USER = credentials[0];
         ROOT_PASS = credentials[1];
 
@@ -40,12 +49,13 @@ public class DataBaseInitializer {
             if (!databaseExists(rootConn)) {
                 createDatabaseAndUser(rootConn);
                 System.out.println("Database and user created.");
+                JOptionPane.showMessageDialog(null, "ID:adm001 | Password:admin");
             }
         } catch (SQLException e) {
             e.printStackTrace();
             return;
         }
-
+        
         // Now connect as the application user
         try (Connection appConn = DriverManager.getConnection(DB_URL + DB_NAME, APP_USER, APP_PASS)) {
             if (!tablesExist(appConn)) {
@@ -113,12 +123,13 @@ public class DataBaseInitializer {
             
             if (rs.next() && rs.getInt(1) == 0) {
                 try (PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
-                    insertStmt.setString(1, "1");
+                    insertStmt.setString(1, "adm001");
                     insertStmt.setString(2, "Admin");
                     insertStmt.setString(3, "Admin");
                     insertStmt.setString(4, "admin");
                     insertStmt.executeUpdate();
                     System.out.println("Admin user created. Username: Admin, Password: admin");
+                    
                 }
             }
         }
@@ -152,6 +163,8 @@ public class DataBaseInitializer {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            username = "user";
+            password = "pass";
         }
 
         result[0] = username;
