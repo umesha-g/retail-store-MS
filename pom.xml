@@ -4,6 +4,13 @@
   <artifactId>retailstorerm</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+  <distributionManagement>
+    <repository>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/your-github-username/your-repository</url>
+    </repository>
+</distributionManagement>
+
   <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
