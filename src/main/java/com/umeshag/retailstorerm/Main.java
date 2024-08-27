@@ -11,8 +11,8 @@ import javax.swing.*;
 
 import com.formdev.flatlaf.FlatLightLaf;
 
-public class main {
-    public static void main (String[] args) {
+public class Main {
+    public static void main(String[] args) {
         DataBaseInitializer.initialize();
          try{
              javax.swing.UIManager.setLookAndFeel(new FlatLightLaf());

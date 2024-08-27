@@ -978,7 +978,7 @@ public class AdminWindow extends javax.swing.JFrame implements Serializable {
 //================================ METHODS =====================================  
     // log out method ----------------------------------------------------------
     private void logOutBtnMouseClicked(java.awt.event.MouseEvent evt) { 
-      main.openLogin(); 
+      ain.openLogin(); 
       dispose();
     }
 
