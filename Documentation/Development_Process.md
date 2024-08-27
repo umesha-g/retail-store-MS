@@ -50,7 +50,7 @@ During the field visits to various retail stores and supermarkets, several commo
 
 The insights gained from the analytics guided the design of the management software’s graphical user interface (GUI). Subsequently, a deliberation resulted in the inclusion of two distinct modules: the Cashier module and the Administrator module. In an endeavor to maintain comprehensive organization, all requisite requirements and functionalities were meticulously structured and represented within the following diagram.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.001.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.001.jpeg)
 
 Figure 3.1: Diagram of Requirements And Functions Upon the successful culmination of the initial phase, Phase 2 was initiated.
 
@@ -84,7 +84,7 @@ In accordance with the analysis conducted in the preceding phase, it was establi
 
    Within this section, the Administrator is empowered to comprehensively view all pertinent stock information. Moreover, a search operation will yield relevant data displayed within this table, thereby offering a tailored and refined view of the stocks data.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.002.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.002.jpeg)
 
 Figure 3.2: Diagram of Stock Panel Architecture
 
@@ -105,7 +105,7 @@ It encompasses the inclusion of a report button, which, upon activation, initiat
 
    In this section, the Administrator has the ability to access a comprehensive view of all relevant customer data. Additionally, conducting a search operation will retrieve and display pertinent information within this table, providing a customized and refined perspective on customer data.
 
-   ![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.003.jpeg)
+   ![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.003.jpeg)
 
 Figure 3.3: Diagram of Customers Panel Architecture
 
@@ -127,14 +127,14 @@ Figure 3.3: Diagram of Customers Panel Architecture
 
    In this section, the Administrator is empowered to gain comprehensive access to all pertinent employee data. Furthermore, initiating a search operation retrieves and displays relevant information within the table.
 
-   ![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.004.jpeg)
+   ![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.004.jpeg)
 
 Figure 3.4: Diagram of Employee Panel Architecture
 
 #### The fourth tabbed panel was exclusively designated for presenting transaction data in a tabular format. 
 This panel comprises two distinct components: a search text field and a transaction display table. Similar to the previous text fields, the search text field operates in real-time, with each keystroke activating the search functionality.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.005.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.005.jpeg)
 
 Figure 3.5: Diagram of Transactions Panel Architecture
 
@@ -144,7 +144,7 @@ As was analyzed in the preceding phase, the need for the capability to manage a 
 
 Hence, the architectural framework of the cashier window was meticulously structured to meet the aforementioned requirement.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.006.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.006.jpeg)
 
 Figure 3.6: Diagram of Transaction Process
 
@@ -188,7 +188,7 @@ Following this, the remainder of the window was partitioned into five distinct s
 
 The architectural diagram of the Cashier Windows is represented in the following illustration
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.007.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.007.jpeg)
 
 Figure 3.7: Diagram of Cashier window Architecture
 
@@ -198,7 +198,7 @@ The Login window was thoughtfully divided into two sections. The left side featu
 
 The login section included, A ”Sign In” header. A combo box for selecting usernames loaded directly from the database, enabling access for both administrators and cashiers. A password field for authentication. Login and close buttons. If the entered credentials were correct, access was granted based on the user’s role; otherwise, an ”Incorrect credentials” message appeared for immediate feedback.This window operates within the Main program, and upon a successful login, it triggers the opening of either the Admin or Cashier windows, both of which are also integrated into the Main program.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.008.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.008.jpeg)
 
 Figure 3.8: Diagram of Login window Architecture
 
@@ -210,7 +210,7 @@ The Main window instantiates the Login window and injects an external mechanism 
 
 As described earlier, closing either an Admin or Cashier Window will trigger the reopening of the Login Window, ensuring that one of the three windows is always visible. In the event that the program is not closed through the Login Window, the Main Program will continue to run in the background. Conversely, if the Login Window was closed, the Main Program itself would be terminated.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.009.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.009.jpeg)
 
 Figure 3.9: Diagram of Main program Architecture
 
@@ -218,7 +218,7 @@ Figure 3.9: Diagram of Main program Architecture
 
 This feature provides a graphical representation of the stock difference between the stock refill date and the current date. It presents the data in the form of a bar chart, where each item is represented by two dedicated bars. One bar indicates the initial stock quantity, while the front bar displays the current stock quantity. This visual representation allows users to discern the movement of each item in their stocks and identify items that are approaching depletion. Data will be directly imported from the Database (Initial Stocks table and Stocks Table).
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.010.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.010.jpeg)
 
 Figure 3.10: Diagram of Stock Report Window Architecture
 
@@ -232,7 +232,7 @@ This window was structured into three distinct sections:
 
 3. The bottom section displayed a bar chart that showcased the distribution of customer counts, categorized into 11 distinct bill total ranges, ranging from the maximum bill amount to the minimum bill amount.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.011.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.011.jpeg)
 
 Figure 3.11: Diagram of Customer Report Window Architecture
 
@@ -240,7 +240,7 @@ Figure 3.11: Diagram of Customer Report Window Architecture
 
 This window is exclusively dedicated to a time series graph illustrating customer performances. It displays the number of transactions completed per hour for each day, with a separate graph provided for each cashier.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.012.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.012.jpeg)
 
 Figure 3.12: Diagram of Employee Report Window Architecture
 
@@ -248,7 +248,7 @@ Figure 3.12: Diagram of Employee Report Window Architecture
 
 This bill number generator is exclusive to the Cashier window, generating a unique bill number each time a new order is initiated.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.013.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.013.png)
 
 Figure 3.13: Diagram of Bill Number Generator Architecture
 
@@ -256,7 +256,7 @@ Figure 3.13: Diagram of Bill Number Generator Architecture
 
 This popup dialog box opens when the Cashier Window’s ”Paid” button is clicked and offers three modes: Cash, Card, and Voucher. Cashiers input the paid amount or last four digits of a card or voucher value, followed by clicking the ”Submit” button. This action triggers the internal calculation process within the Cashier Window, ultimately displaying the paid amount and balance.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.014.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.014.jpeg)
 
 Figure 3.14: Diagram of Payment Pop-up Dialog Box Architecture
 
@@ -264,7 +264,7 @@ Figure 3.14: Diagram of Payment Pop-up Dialog Box Architecture
 
 This mechanism was designed as a standalone component within the program, ensuring its versatility for use in various contexts where table refreshing is required. It has the capability to refresh tables belonging to different categories, such as customers, stocks, employees, and transactions, upon a valid request for a specific category. This process involves clearing the current data from the table and repopulating it directly from the database.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.015.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.015.png)
 
 Figure 3.15: Diagram of Table refreshing Mechanism Architecture
 
@@ -272,7 +272,7 @@ Figure 3.15: Diagram of Table refreshing Mechanism Architecture
 
 This feature is triggered when the Admin Window’s ”Stock Reset” button is clicked, opening as a new instance within the Cashier Window. It first requests the admin password, and if the password is correct, a second confirmation dialog box appears, asking, ”Do You Want To Proceed?” Upon selecting ”Yes” or ”No,” the process proceeds to reset the stocks, essentially creating an identical copy of the current stock table known as the ”Initial Stocks Table.”
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.016.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.016.jpeg)
 
 Figure 3.16: Diagram of Stock Reset Confirming Dialog Architecture
 
@@ -304,7 +304,7 @@ The primary database schema, developed within the MySQL framework, interfaces wi
 
    This table was employed for the storage of transaction details (Transaction Number, Invoice Number, Transaction Date, Transaction Time, Cashier ID, Cashier Name, Total Quantity Purchased, Customer ID, Customer Name, Total Bill Amount, Payment Method, Paid Amount, and Balance). Every time a transaction was successfully completed at the cashier window, a corresponding record was generated and added to this table.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.017.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.017.jpeg)
 
 Figure 3.17: Diagram of Database Design
 
@@ -338,27 +338,27 @@ The selection of colors aimed to maintain a pleasant and dark-colored interface,
 * White, rgb(255, 255, 255), hsl(0, 0%, 100%)
 * Black, rgb(0, 0, 0), hsl(0, 0%, 0%)
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.018.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.018.png)
 
 Figure 3.18: Diagram of Login Window GUI
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.019.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.019.jpeg)
 
 Figure 3.19: Diagram of Cashier Window GUI
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.020.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.020.jpeg)
 
 Figure 3.20: Diagram of Stock Panel GUI
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.021.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.021.jpeg)
 
 Figure 3.21: Diagram of Customer Panel GUI
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.022.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.022.jpeg)
 
 Figure 3.22: Diagram of Employee Panel GUI
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.023.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.023.jpeg)
 
 Figure 3.23: Diagram of Transaction Panel GUI
 
@@ -368,7 +368,7 @@ Figure 3.23: Diagram of Transaction Panel GUI
 
 Any registered user can access the system, with two primary user types: Administrator and Cashier. In the login screen, users can select their ID from the combo box, input their password, and click the ’Continue’ button. The system validates the inputs with the database and grants access if the credentials are correct. In the case of an incorrect password, an ’Invalid Credentials’ message is displayed in red. Upon validation, the system automatically launches the relevant user side based on the user’s job role. Users can also close the system by clicking the ’Close’ button.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.024.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.024.jpeg)
 
 Figure 3.24: Functions of Login Screen as a Flow chart
 
@@ -380,7 +380,7 @@ The Cashier window is purposefully designed to facilitate the entire billing pro
 
 To initiate a new order, the user must click on the ”Start New Order” button. This action triggers several important functions: it resets all input text fields, clears customer information, resets variables involved in calculation processes, and clears the list of billed items. Additionally, it generates and displays a new invoice number, as well as the corresponding date and time. This comprehensive action ensures a clean slate for each new transaction, streamlining the billing process.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.025.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.025.png)
 
 Figure 3.25: Function of New Order Button as a Flow chart 
 
@@ -388,7 +388,7 @@ Figure 3.25: Function of New Order Button as a Flow chart
 
 In the cashier module, there exists a dynamic and versatile customer selection process. When a customer claims to be a registered user, the cashier is provided with the option to input either the customer’s ID number or phone number. by clicking the ”Select” button, the search process is initiated. If the entered number happens to correspond with any of the phone numbers or ID numbers stored in the database, the customer is seamlessly and accurately selected. Their relevant information, stored in specific variables, is promptly displayed. These variables play a pivotal role in the calculation and display of loyalty points. Importantly, this customer selection process can be performed at any point in between starting a new order and printing the bill. If neither the provided ID nor phone number is found in the database, the system will display ”Non-Registered Customer”. Also Users can Skip this step, in which case the system will automatically categorize the customer as non-registered by default.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.026.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.026.png)
 
 Figure 3.26: Function of Customer selection Button as a Flow chart 
 
@@ -400,7 +400,7 @@ to Bill” button. The system will verify whether the item is available in stock
 
 be continuously recalculated and presented for each item added. An alternative method allows users to simply double-click on the item in the Item Display table, triggering the same mechanism described earlier. After each addition, the quantity field will automatically reset to ”1”, allowing users to add multiple items with the same simple double-click action.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.027.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.027.jpeg)
 
 Figure 3.27: Function of Adding Items to Bill as a Flow Chart 
 
@@ -408,7 +408,7 @@ Figure 3.27: Function of Adding Items to Bill as a Flow Chart
 
 This mechanism also functions similarly to the previous item addition method. Users can select an item by clicking on it in the bill table and then click on the ’Remove Item’ button. The system will remove the item from the bill and add the relevant quantity back to the database. Additionally, the item display table will be refreshed with updated stock levels. This can also be triggered by double-clicking on a bill item, and both the sub-total and the total item count will be recalculated accordingly.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.028.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.028.png)
 
 Figure 3.28: Function of Removing Items from Bill as a Flow Chart 
 
@@ -416,11 +416,11 @@ Figure 3.28: Function of Removing Items from Bill as a Flow Chart
 
 If a user is unable to locate an item in the display table, they can perform a search by typing the name or code into the search text field. With each key press, the search is initiated using the characters entered in the text field, providing wildcard search results. This allows the user to find products without needing to know the exact product name or code. To revert the table to its initial state, the user can click on the ’Reset’ button, and both the search text field and the table will be reset. If the text field is empty and a backspace key is pressed, the table will be reset.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.029.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.029.png)
 
 Figure 3.29: Function of Searching Items as a Flow Chart
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.030.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.030.png)
 
 Figure 3.30: Function of Resetting Items as a Flow Chart 
 
@@ -428,7 +428,7 @@ Figure 3.30: Function of Resetting Items as a Flow Chart
 
 The cashier can select the payment method used by the customer by clicking one of the three buttons: ’Cash’, ’Card’ or ’Voucher.’ If the user does not make a selection, the system will default to ’Cash’. This choice is then stored in a variable for future calculations.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.031.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.031.png)
 
 Figure 3.31: Function of Payment method Selection as a Flow Chart
 
@@ -440,11 +440,11 @@ Subsequently, if the payment method is ’Cash,’ the system will calculate the
 
 Furthermore, the functions to add and remove items , Customer Selecting will be disabled for Safety until the ’Print the Bill’ button is clicked. The payment acceptance dialog box will also be disabled after a single use until the ’Start New Order’ process is initiated.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.032.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.032.png)
 
 Figure 3.32: Function of Paid Button as a Flow Chart
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.033.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.033.jpeg)
 
 Figure 3.33: Function of Payment Accepting Dialog Box as a Flow Chart 
 
@@ -452,7 +452,7 @@ Figure 3.33: Function of Payment Accepting Dialog Box as a Flow Chart
 
 At this stage, the cashier reaches the final step, which involves printing the bill and providing a copy to the customer. Adding and removing items have been disabled for safety reasons. To proceed, the user must click on the ’Print the Bill’ button. The system will then generate a comprehensive transaction record in the database, allowing for bill printing. Following this, the system resets the bill preview panel and all associated variables. The disabled functions are re-enabled, and the system is prepared for another transaction. To initiate a new transaction, the cashier must return to step 1.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.034.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.034.jpeg)
 
 Figure 3.34: Function of Print the Bill as a Flow Chart
 
@@ -460,7 +460,7 @@ Figure 3.34: Function of Print the Bill as a Flow Chart
 
 When a cashier concludes their shift, they can log out of the system by clicking the ’Log out’ button. This action closes the cashier window, creates a comprehensive record of the cashier’s performance during their usage period, and opens the login screen, enabling another user to seamlessly log into the system.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.035.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.035.png)
 
 Figure 3.35: Function of Login Out as a Flow Chart
 
@@ -470,7 +470,7 @@ Figure 3.35: Function of Login Out as a Flow Chart
 
 In the Administrator window, the primary functions involve adding, updating, or removing customers, stocks, and employees. All sections share a common method for adding new data. To execute this method, users must input data into four text fields relevant to each section and click the ’Add/Update’ button. If the provided ID or Code is already present in the database, the new data will override the existing entry; otherwise, a new entry will be added. For the convenience of updating existing entries, users can double-click on items in the table. This action will copy the details of the selected item to the relevant input fields on the adding panel. Users can then modify any details they choose and click the ’Add/Update’ button to execute the update. After executing the update, the table will be refreshed with the new database records.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.036.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.036.jpeg)
 
 Figure 3.36: Function of Item add to Database as a Flow Chart
 
@@ -480,11 +480,11 @@ The search, remove, and reset functions function similarly across all sections. 
 
 For removal, the user can select any entry from the table and click the ’Remove’ button. This deletes the chosen entry from the database and refreshes the table with the updated dataset.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.037.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.037.jpeg)
 
 Figure 3.37: Function of Search and Reset from Database as a Flow Chart
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.038.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.038.png)
 
 Figure 3.38: Function of Remove Item from Database as a Flow Chart 
 
@@ -494,7 +494,7 @@ To view the stock report, users can click the ’Stock Report’ button on the S
 
 chart of Stocks vs Quantity, which is displayed in a separate window on top of the admin window. Users can close this separate window after analyzing the chart.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.039.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.039.png)
 
 Figure 3.39: Function of Stock Report Generating as a Flow Chart 
 
@@ -502,7 +502,7 @@ Figure 3.39: Function of Stock Report Generating as a Flow Chart
 
 The stock resetting mechanism is required when a retail store is renewing its stock. After adding new stock data to the database, the user can click on the ’Stock Reset’ button. This action prompts a dialog box to request the Admin’s password. If the correct password is entered, the process continues; otherwise, an ’Access Denied’ message is displayed, and the process is aborted. With the correct password, the user is then asked, ’Do you want to proceed?’ If the user clicks ’NO’, the process is aborted, but if ’YES’ is chosen, an identical copy of the ’Stocks’ table in the database is created in the ’Initial Stocks’ table in the database, and the message ’Initial Stocks Reset’ is displayed.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.040.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.040.jpeg)
 
 Figure 3.40: Function of Initial Stock Rest as a Flow Chart
 
@@ -526,7 +526,7 @@ Next, the Lower Bound, Upper Bound, and Count will be incorporated into the Bar 
 
 Subsequently, transaction counts from registered and non-registered customer segments, the number of registered customers, maximum bill amount, and minimum bill amount will be fetched from the database. All this data, along with the two generated charts, will be presented in a separate window that can be independently closed after analysis.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.041.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.041.jpeg)
 
 Figure 3.41: Function of Customer Report Displaying as a Flow Chart 
 
@@ -539,7 +539,7 @@ Initially, the system will retrieve employee data from the database and create a
 
 Subsequently, transactions per hour for each day and append this data to the pre-created series as a time series. All these series will then be incorporated into the dataset. The dataset will be utilized to generate and exhibit a timeseries diagram depicting the relationship between the date and the number of transactions per hour. Within the same chart area, data from all employees will be displayed, with each employee’s name represented by a distinct color. This window can also be closed independently.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.042.jpeg)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.042.jpeg)
 
 Figure 3.42: Function of Employee Report Displaying as a Flow Chart
 
@@ -547,7 +547,7 @@ Figure 3.42: Function of Employee Report Displaying as a Flow Chart
 
 Administrator can log out of the system by clicking the ’Log out’ button. This action closes the Admin window and opens the login screen, enabling another user to seamlessly log into the system.
 
-![](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.043.png)
+![Alt text](images/Aspose.Words.df38283e-4b90-45c3-8293-7c4965409766.043.png)
 
 Figure 3.43: Function of Logout of Administrator as a Flow Chart
 
